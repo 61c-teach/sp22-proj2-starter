@@ -232,7 +232,7 @@ class AssemblyTest:
         self._args += [
             "",
             "# load pointers to argument strings into argv",
-            f"la a1, argv",
+            f"la a0, argv",
         ]
         for ii, aa in enumerate(arg_strings):
             self._args += [f"la t1, {aa}", f"sw t1, {ii * 4}(a1)"]
@@ -316,15 +316,15 @@ class AssemblyTest:
             f"li t0 {value}",
             f"beq {saved_register} t0 {lbl}",
             "# print error and exit",
-            f"la a1, {msg}",
+            f"la a0, {msg}",
             "jal print_str",
-            f"mv a1 {saved_register}",
+            f"mv a0 {saved_register}",
             "jal print_int",
             "# Print newline",
-            "li a1 '\\n'",
+            "li a0 '\\n'",
             "jal ra print_char",
             f"# exit with code {exit_code} to indicate failure",
-            f"li a1 {exit_code}",
+            f"li a0 {exit_code}",
             "jal exit",
             f"{lbl}:",
             "",
@@ -526,7 +526,7 @@ class AssemblyTest:
             p += [f"addi sp, sp, {4 * (len(self._output_regs) + 1)}"]
             lines += _indent(p + [""])
         # lines += _indent(["mv a0, zero", "ret"])
-        lines += _indent([f"li a1 0", "jal exit"])
+        lines += _indent([f"li a0 0", "jal exit"])
         lines += [""]
 
         if verbose:
