@@ -57,5 +57,5 @@ loop_end:
     ret
 
 exit_bad_len:
-    li a1 36
+    li a0 36
     j exit
