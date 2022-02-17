@@ -27,7 +27,7 @@
 .globl compare_int_array
 
 # Calling Convention Functions
-.globl randomizeAllRegs, randomizeRegsBesidesA0, randomizeSavedRegs, checkSavedRegs, randomizeSavedRegs2, checkSavedRegs2
+.globl randomizeCalleeSavedRegs, randomizeCalleeSavedRegsBesidesA0, randomizeCallerSavedRegs, checkCallerSavedRegs, randomizeCallerSavedRegs2, checkCallerSavedRegs2
 
 .data
 static_space_for_sp: .word 0 0 0
