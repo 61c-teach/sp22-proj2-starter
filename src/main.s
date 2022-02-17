@@ -18,5 +18,5 @@ main:
 	jal classify
 
 	# exit program normally
-	li a1 0
+	li a0 0
 	jal exit

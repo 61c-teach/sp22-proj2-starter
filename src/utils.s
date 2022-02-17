@@ -39,9 +39,9 @@ error_string2: .string "This library file should not be directly called!"
 .text
 # Exits if you run this file
 main:
-	la a1 error_string
+	la a0 error_string
 	jal print_str
-	li a1 1
+	li a0 1
 	jal exit
 # End main
 
@@ -311,10 +311,10 @@ print_num_alloc_blocks:
 	sw ra 0(sp)
 
 	jal num_alloc_blocks
-	mv a1 a0
+	mv a0 a0
 	jal print_int
 
-	li a1 '\n'
+	li a0 '\n'
 	jal print_char
 
 	lw ra 0(sp)
@@ -370,11 +370,11 @@ inner_loop_start:
 	lw t1 0(t0)
 
 	# Print matrix element
-	mv a1 t1
+	mv a0 t1
 	jal print_int
 
 	# Print whitespace
-	li a1 ' '
+	li a0 ' '
 	jal print_char
 
 
@@ -383,7 +383,7 @@ inner_loop_start:
 
 inner_loop_end:
 	# Print newline
-	li a1 '\n'
+	li a0 '\n'
 	jal print_char
 
 	addi s3 s3 1
@@ -454,7 +454,7 @@ fail:
 	mv s2, a3
 
 	# print user supplied error message
-	mv a1, a4
+	mv a0, a4
 	jal print_str
 
 	# print actual data

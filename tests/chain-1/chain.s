@@ -90,21 +90,21 @@ main:
     addi sp, sp, 4
 
     # print message
-    la a1 print_msg
+    la a0 print_msg
     jal print_str
 
     # print result of first classify
-    mv a1 s0
+    mv a0 s0
     jal print_int
 
-    li a1 '\n'
+    li a0 '\n'
     jal print_char
 
     # print result of second classify
-    mv a1 s1
+    mv a0 s1
     jal print_int
 
-    li a1 '\n'
+    li a0 '\n'
     jal print_char
     # END MAIN CHAIN
 
@@ -162,21 +162,21 @@ main:
     addi sp, sp, 4
 
     # print message
-    la a1 print_msg
+    la a0 print_msg
     jal print_str
 
     # print first classify output
-    mv a1 s0
+    mv a0 s0
     jal print_int
 
-    li a1 '\n'
+    li a0 '\n'
     jal print_char
 
     # print second classify output
-    mv a1 s1
+    mv a0 s1
     jal print_int
 
-    li a1 '\n'
+    li a0 '\n'
     jal print_char
     # END MAIN CHAIN
 
@@ -225,21 +225,21 @@ main:
     lw s0 0(sp)
     addi sp, sp, 4
 
-    la a1 print_msg
+    la a0 print_msg
     jal print_str
 
-    mv a1 s0
+    mv a0 s0
     jal print_int
 
-    li a1 '\n'
+    li a0 '\n'
     jal print_char
 
-    mv a1 s1
+    mv a0 s1
     jal print_int
 
-    li a1 '\n'
+    li a0 '\n'
     jal print_char
     # END MAIN CHAIN
 
-    li a1 0
+    li a0 0
     jal exit
