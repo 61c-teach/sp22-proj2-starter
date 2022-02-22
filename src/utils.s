@@ -464,7 +464,7 @@ fail:
 	jal print_int_array
 
 	# exit with user defined error code
-	mv a1, s0
+	mv a0, s0
 	jal exit
 
 end:
